@@ -51,12 +51,12 @@ sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot calibre obs-studio
 
 
 # Installiere Gaming Pakete
-mkdir -p ~/Games/Steam
-ln -s ~/.steam ~/Games/Steam
-
 sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2 libwlroots-0.18 gamemode
 
 sudo dpkg -i gamescope_3.16.15-2_amd64.deb
+
+mkdir -p ~/Games/Steam
+ln -s ~/.steam ~/Games/Steam
 
 
 # Installiere Brave Browser
