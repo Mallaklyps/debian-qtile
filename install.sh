@@ -56,8 +56,7 @@ sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-
 sudo dpkg -i gamescope_3.16.15-2_amd64.deb
 
 mkdir -p ~/Games/Steam
-touch ~/.steam
-ln -s ~/.steam ~/Games/Steam
+ln -s ~/Games/Steam ~/.steam
 
 
 # Installiere Brave Browser
