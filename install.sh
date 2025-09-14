@@ -13,7 +13,7 @@ sudo apt update && sudo apt full-upgrade -y
 
 
 # Verhindere die Installation von ungewollten Paketen
-sudo apt-mark hold desktop-base xterm vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-hinted-udeb fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-noto-unhinted-udeb qsynth
+sudo apt-mark hold desktop-base xterm vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-hinted-udeb fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-noto-unhinted-udeb qsynth
 
 
 # Installiere die benötigten Core-Pakete
@@ -49,7 +49,7 @@ sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot gimp libreoffice l
 
 
 # Installiere Gaming Pakete
-sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2
+sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2 libwlroots-0.18
 
 sudo dpkg -i gamescope_3.16.15-2_amd64.deb
 
@@ -76,7 +76,7 @@ sudo chmod +x /usr/bin/bluetui
 sudo sed -i 's/#user-session=.*/user-session=qtile/g' /etc/lightdm/lightdm.conf
 sudo sed -i 's/#display-setup-script=.*/display-setup-script=/etc/lightdm/lightdm-xrandr.sh/g' /etc/lightdm/lightdm.conf
 
-sudo cp lightdm-xrandr.sh /etc/lightdm
+sudo cp lightdm-xrandr.sh /etc/lightdm/
 sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 
 
