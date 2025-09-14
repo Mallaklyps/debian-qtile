@@ -74,7 +74,7 @@ sudo chmod +x /usr/bin/bluetui
 
 # Konfiguriere lightdm
 sudo sed -i 's/#user-session=.*/user-session=qtile/g' /etc/lightdm/lightdm.conf
-sudo sed -i 's/#display-setup-script=.*/display-setup-script=/etc/lightdm/lightdm-xrandr.sh/g' /etc/lightdm/lightdm.conf
+sudo sed -i 's/#display-setup-script=/display-setup-script=\/etc\/lightdm\/lightdm-xrandr.sh/g' /etc/lightdm/lightdm.conf
 
 sudo cp lightdm-xrandr.sh /etc/lightdm/
 sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
