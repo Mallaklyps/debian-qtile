@@ -12,12 +12,6 @@ sudo dpkg --add-architecture i386
 sudo apt update && sudo apt full-upgrade -y
 
 
-# Installiere Kernel aus den Backports
-sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
-
-sudo echo ntsync > /etc/modules-load.d/ntsync.conf
-
-
 # Verhindere die Installation von ungewollten Paketen
 sudo apt-mark hold desktop-base xterm xterm:i386 vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
 
