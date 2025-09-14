@@ -17,7 +17,7 @@ sudo apt-mark hold desktop-base xterm xterm:i386 vlc fonts-noto fonts-noto-cjk f
 
 
 # Installiere die benötigten Core-Pakete
-sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez
+sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups
 
 
 # Installiere UI-Pakete
@@ -35,7 +35,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mixxx mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot snapper-gui i3lock-fancy calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv qimgv flameshot snapper-gui i3lock-fancy calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
