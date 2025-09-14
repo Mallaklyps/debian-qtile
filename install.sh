@@ -12,20 +12,28 @@ sudo dpkg --add-architecture i386
 sudo apt update && sudo apt full-upgrade -y
 
 
+# Installiere Kernel aus den Backports
+sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
+
+sudo echo ntsync > /etc/modules-load.d/ntsync.conf
+
+
 # Verhindere die Installation von ungewollten Paketen
-sudo apt-mark hold desktop-base xterm vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
+sudo apt-mark hold desktop-base xterm xterm:i386 vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
 
 
 # Installiere die benötigten Core-Pakete
-sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon acpid acpi curl bluez
+sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez
 
 
 # Installiere UI-Pakete
-sudo apt install -y rofi dunst feh nwg-look
+sudo apt install -y rofi dunst feh nwg-look gtk3-nocsd papirus-icon-theme qt6-style-kvantum
 
 
 # Installiere File Manager
-sudo apt install -y thunar thunar-archive-plugin gvfs-backends ranger smbclient cifs-utils xdg-user-dirs-gtk eza
+sudo apt install -y thunar thunar-archive-plugin gvfs-backends ranger smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar
+
+xdg-user-dirs-update
 
 
 # Installiere Audio-Pakete
@@ -33,7 +41,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mixxx mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot gimp libreoffice libreoffice-l10n-de hunspell-de-de mythes-de hyphen-de zathura fonts-recommended starship keepassxc-full
+sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
@@ -49,7 +57,10 @@ sudo apt install -y neovim cmatrix figlet mpv qimgv flameshot gimp libreoffice l
 
 
 # Installiere Gaming Pakete
-sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2 libwlroots-0.18
+mkdir -p ~/Games/Steam
+ln -s ~/.steam ~/Games/Steam
+
+sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2 libwlroots-0.18 gamemode
 
 sudo dpkg -i gamescope_3.16.15-2_amd64.deb
 
