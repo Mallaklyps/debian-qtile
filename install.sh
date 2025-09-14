@@ -13,7 +13,7 @@ sudo apt update && sudo apt full-upgrade -y
 
 
 # Verhindere die Installation von ungewollten Paketen
-sudo apt-mark hold desktop-base xterm xterm:i386 vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
+sudo apt-mark hold desktop-base xterm xterm:i386 pterm vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
 
 
 # Installiere die benötigten Core-Pakete
@@ -28,6 +28,7 @@ sudo apt install -y rofi dunst feh nwg-look gtk3-nocsd papirus-icon-theme qt6-st
 sudo apt install -y thunar thunar-archive-plugin gvfs-backends ranger trash-cli fzf smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar
 
 xdg-user-dirs-update
+sudo mkdir /usr/share/desktop-directories
 
 
 # Installiere Audio-Pakete
