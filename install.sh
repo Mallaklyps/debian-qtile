@@ -89,6 +89,12 @@ sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 # Installiere Nerd-Fonts
 
 
+# Installiere Catppuccin GTK Theme
+git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
+
+./~/debian-qtile/Catppuccin-GTK-Theme/themes/install.sh --tweaks frappe -t blue -c dark
+
+
 # Kopiere bashrc
 
 
