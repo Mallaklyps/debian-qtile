@@ -42,7 +42,7 @@ sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv q
 # Installiere Nvidia-Driver
 #sudo apt install -y nvidia-driver-full nvidia-kernel-dkms firmware-misc-nonfree nvidia-driver-libs:i386 nvidia-cuda-dev nvidia-cuda-toolkit
 
-#sudo echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' > /etc/default/grub.d/nvidia-modeset.cfg
+#echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
 
 #sudo update-grub
 
