@@ -21,7 +21,7 @@ sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolk
 
 
 # Installiere UI-Pakete
-sudo apt install -y rofi dunst feh nwg-look gtk3-nocsd papirus-icon-theme qt6-style-kvantum
+sudo apt install -y rofi dunst feh nwg-look gtk3-nocsd papirus-icon-theme qt6-style-kvantum sassc gtk2-engines-murrine
 
 
 # Installiere File Manager
