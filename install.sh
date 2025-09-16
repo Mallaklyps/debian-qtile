@@ -13,7 +13,7 @@ sudo apt update && sudo apt full-upgrade -y
 
 
 # Verhindere die Installation von ungewollten Paketen
-sudo apt-mark hold desktop-base xterm xterm:i386 pterm vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
+sudo apt-mark hold desktop-base xterm xterm:i386 pterm qmlkonsole vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
 
 
 # Installiere die benötigten Core-Pakete
@@ -92,7 +92,7 @@ sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 # Installiere Catppuccin GTK Theme
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
 
-~/debian-qtile/Catppuccin-GTK-Theme/themes/./install.sh --tweaks macchiato float -t blue -c dark -l
+~/debian-qtile/Catppuccin-GTK-Theme/themes/./install.sh --tweaks frappe float -t blue -c dark -l
 
 
 # Kopiere bashrc
