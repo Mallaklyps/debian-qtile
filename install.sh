@@ -36,7 +36,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mixxx mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv qimgv flameshot snapper-gui i3lock-fancy calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv qimgv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
