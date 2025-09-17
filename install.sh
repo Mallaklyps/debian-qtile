@@ -88,7 +88,7 @@ sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 
 # Installiere Nerd-Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
-sudo unzip JetBrainsMono.zip -d "/usr/share/fonts"
+sudo unzip JetBrainsMono.zip -d "/usr/share/fonts/JetBrainsMono"
 
 fc-cache -f
 
@@ -104,7 +104,7 @@ mkdir ~/.icons
 
 # Installiere Grub Theme
 git clone https://github.com/catppuccin/grub.git
-sudo mkdir /usr/share/grub/themes/catppuccin-frappe-grub-theme
+sudo mkdir -p /usr/share/grub/themes/catppuccin-frappe-grub-theme
 sudo cp -r ~/debian-qtile/grub/src/catppuccin-frappe-grub-theme /usr/share/grub/themes/catppuccin-frappe-grub-theme/
 echo "GRUB_THEME="/usr/share/grub/themes/catppuccin-frappe-grub-theme/theme.txt"" | sudo tee -a /etc/default/grub
 sudo update-grub
