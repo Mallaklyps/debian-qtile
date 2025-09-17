@@ -99,8 +99,8 @@ mkdir ~/.icons
 
 git clone https://github.com/catppuccin/papirus-folders.git
 sudo cp -r ~/debian-qtile/papirus-folders/src/* /usr/share/icons/Papirus
-curl -LO https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/papirus-folders && chmod +x ./papirus-folders -C cat-frappe-blue --theme Papirus-Dark
-
+curl -LO https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/papirus-folders && chmod +x ~/papirus-folders/papirus-folders
+sudo ~/papirus/./papirus-folders -C cat-frappe-blue --theme Papirus-Dark
 
 
 # Kopiere bashrc
