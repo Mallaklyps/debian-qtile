@@ -95,6 +95,7 @@ sudo ~/debian-qtile/Catppuccin-GTK-Theme/themes/./install.sh --tweaks frappe flo
 
 wget https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-frappe-dark-cursors.zip
 sudo unzip catppuccin-frappe-dark-cursors.zip -d "/usr/share/icons"
+mkdir ~/.icons
 
 
 # Kopiere bashrc
