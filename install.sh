@@ -97,6 +97,11 @@ wget https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-f
 sudo unzip catppuccin-frappe-dark-cursors.zip -d "/usr/share/icons"
 mkdir ~/.icons
 
+git clone https://github.com/catppuccin/papirus-folders.git
+sudo cp -r ~/debian-qtile/papirus-folders/src/* /usr/share/icons/Papirus
+curl -LO https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/papirus-folders && chmod +x ./papirus-folders -C cat-frappe-blue --theme Papirus-Dark
+
+
 
 # Kopiere bashrc
 
