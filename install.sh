@@ -32,11 +32,11 @@ sudo mkdir /usr/share/desktop-directories
 
 
 # Installiere Audio-Pakete
-sudo apt install -y pipewire-audio pulsemixer audacity mixxx mpd ncmpcpp cava
+sudo apt install -y pipewire-audio pulsemixer audacity mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv qimgv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv qimgv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
@@ -52,9 +52,7 @@ sudo apt install -y neovim cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv q
 
 
 # Installiere Gaming Pakete
-sudo apt install -y steam scummvm lutris xwayland libeis1 libliftoff0 libluajit-5.1-2 libwlroots-0.18 gamemode
-
-sudo dpkg -i gamescope_3.16.15-2_amd64.deb
+sudo apt install -y steam scummvm lutris gamemode
 
 mkdir -p ~/Games/Steam
 ln -s ~/Games/Steam ~/.steam
@@ -66,6 +64,18 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://brave-browser-apt-release.s3.brave.com/brave-browser.sources
 
 sudo apt update && sudo apt install -y brave-browser
+
+
+# Installiere Mixxx
+sudo apt install -y ./mixxx-2.5.3-16-g4168280385.deb
+
+
+# Installiere Neovim
+sudo apt install -y ./nvim-linux-x86_64.deb
+
+
+# Installiere Gamescope
+sudo apt install -y ./gamescope_3.16.15-2_amd64.deb
 
 
 # Installiere Pfetch
