@@ -87,6 +87,10 @@ sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 
 
 # Installiere Nerd-Fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+sudo unzip JetBrainsMono.zip -d "/usr/share/fonts"
+
+fc-cache -f
 
 
 # Installiere Catppuccin GTK Theme & Cursor
