@@ -91,11 +91,10 @@ sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 
 # Installiere Catppuccin GTK Theme & Cursor
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme.git
-
 ~/debian-qtile/Catppuccin-GTK-Theme/themes/./install.sh --tweaks frappe float -t blue -c dark -l
 
 wget https://github.com/catppuccin/cursors/releases/download/v2.0.0/catppuccin-frappe-dark-cursors.zip
-
+mkdir ~/.icons
 unzip catppuccin-frappe-dark-cursors.zip -d "~/.icons"
 
 
