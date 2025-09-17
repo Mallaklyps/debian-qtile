@@ -98,6 +98,13 @@ sudo unzip catppuccin-frappe-dark-cursors.zip -d "/usr/share/icons"
 mkdir ~/.icons
 
 
+# Installiere Grub Theme
+git clone https://github.com/catppuccin/grub.git
+sudo cp -r ~/debian-qtile/grub/src/catppuccin-frappe-grub-theme /usr/share/grub/themes/
+echo "GRUB_THEME="/usr/share/grub/themes/catppuccin-frappe-grub-theme/theme.txt"" | sudo tee -a /etc/default/grub
+sudo update-grub
+
+
 # Kopiere bashrc
 
 
