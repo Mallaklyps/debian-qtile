@@ -95,6 +95,8 @@ sudo sed -i 's/#display-setup-script=/display-setup-script=\/etc\/lightdm\/light
 sudo cp lightdm-xrandr.sh /etc/lightdm/
 sudo chmod +x /etc/lightdm/lightdm-xrandr.sh
 
+sudo cp slick-greeter.conf /etc/lightdm/
+
 
 # Installiere Nerd-Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
