@@ -126,6 +126,7 @@ sudo update-grub
 
 
 # Kopiere Hintergrundbilder
+sudo mkdir /usr/share/backgrounds
 sudo cp forest.jpg /usr/share/backgrounds
 sudo cp valley.jpg /usr/share/backgrounds
 
