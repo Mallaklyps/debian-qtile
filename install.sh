@@ -136,4 +136,10 @@ sudo cp valley.jpg /usr/share/backgrounds
 # Kopiere .config
 cp -r .config ~/
 
+
+# Deinstalliere X-Term
+sudo apt purge -y xterm
+sudo apt autopurge -y
+
+
 echo "Die Installation ist abgeschlossen. Bitte starte deinen Rechner neu, damit die Änderungen wirksam werden."
