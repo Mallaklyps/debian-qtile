@@ -125,6 +125,11 @@ sudo update-grub
 # Kopiere bashrc
 
 
+# Kopiere Hintergrundbilder
+sudo cp forest.jpg /usr/share/backgrounds
+sudo cp valley.jpg /usr/share/backgrounds
+
+
 # Kopiere .config
 cp -r .config ~/
 
