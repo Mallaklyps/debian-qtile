@@ -72,9 +72,8 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "b", lazy.spawn("brave-browser"), desc="Launch Firefox-ESR Browser"),
-    Key([mod], "t", lazy.spawn("thunar"), desc="Launch Thunar Filemanager"),
+    Key([mod], "b", lazy.spawn("brave-browser"), desc="Launch Brave Browser"),
+    Key([mod], "r", lazy.spawn("thunar"), desc="Launch Ranger Filemanager"),
     Key([mod], "space", lazy.spawn("rofi -show drun"), desc="ROFI Application Menu"),
 ]
 
