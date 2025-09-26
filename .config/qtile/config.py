@@ -73,7 +73,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "b", lazy.spawn("brave-browser"), desc="Launch Brave Browser"),
-    Key([mod], "r", lazy.spawn("ranger"), desc="Launch Ranger Filemanager"),
+    Key([mod], "r", lazy.spawn("alacritty -e ranger"), desc="Launch Ranger Filemanager"),
     Key([mod], "space", lazy.spawn("rofi -show drun"), desc="ROFI Application Menu"),
 ]
 
