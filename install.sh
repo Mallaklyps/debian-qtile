@@ -142,4 +142,9 @@ sudo apt purge -y xterm
 sudo apt autopurge -y
 
 
+#Installiere Kernel aus den Backports
+#sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
+#echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
+
+
 echo "Die Installation ist abgeschlossen. Bitte starte deinen Rechner neu, damit die Änderungen wirksam werden."
