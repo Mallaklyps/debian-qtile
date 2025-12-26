@@ -17,7 +17,7 @@ sudo apt-mark hold desktop-base vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-ext
 
 
 # Installiere die benötigten Core-Pakete
-sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups
+sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups firmware-linux
 
 
 # Installiere UI-Pakete
@@ -40,15 +40,31 @@ sudo apt install -y cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv flamesho
 
 
 # Installiere Nvidia-Driver
-#sudo apt install -y nvidia-driver-full nvidia-kernel-dkms firmware-misc-nonfree nvidia-driver-libs:i386 nvidia-cuda-dev nvidia-cuda-toolkit
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/cuda-keyring_1.1-1_all.deb
+sudo apt install -y ./cuda-keyring_1.1-1_all.deb
+sudo apt update && sudo apt install -y linux-headers-amd64 nvidia-driver-pinning-590 firmware-misc-nonfree
+
+sudo apt -V install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit
+
+echo "panic=0 ro quiet loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1" | sudo tee -a /etc/kernel/cmdline
 
 #echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
-
 #sudo update-grub
 
-#sudo systemctl enable nvidia-suspend.service
-#sudo systemctl enable nvidia-hibernate.service
-#sudo systemctl enable nvidia-resume.service
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-resume.service
+
+
+#Installiere Wine & NTsync
+wget -O morgwai-obs.gpg https://build.opensuse.org/projects/home:morgwai/signing_keys/download?kind=gpg
+echo "deb [signed-by=/etc/apt/keyrings/morgwai-obs.gpg] http://download.opensuse.org/repositories/home:/morgwai:/ntsync/Debian_13 /" > wine-ntsync.list
+sudo mv morgwai-obs.gpg /etc/apt/keyrings/
+sudo mv wine-ntsync.list /etc/apt/sources.list.d/
+sudo apt update
+
+sudo apt install -y winehq-devel
 
 
 # Installiere Gaming Pakete
