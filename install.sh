@@ -59,7 +59,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/cu
 sudo apt install -y ./cuda-keyring_1.1-1_all.deb
 sudo apt update && sudo apt install -y nvidia-driver-pinning-590 firmware-misc-nonfree
 
-sudo apt -V install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit
+sudo apt -V install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit nvidia-driver-libs:i386
 
 echo "panic=0 ro quiet loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1" | sudo tee -a /etc/kernel/cmdline
 
