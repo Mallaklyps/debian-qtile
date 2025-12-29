@@ -13,7 +13,7 @@ URIs: http://deb.debian.org/debian
 Suites: trixie-backports
 Components: main contrib non-free non-free-firmware
 Enabled: yes
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" sudo tee /etc/apt/sources.list.d/debian-backports.sources
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/debian-backports.sources
 
 
 # Aktualisiere die Paketlisten und installiere Updates
@@ -21,7 +21,7 @@ sudo apt update
 
 sudo apt install -y linux-headers-amd64
 
-sudo apt full-upgrade -y -t trixie-backports
+sudo apt full-upgrade -t trixie-backports -y
 
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
@@ -162,9 +162,15 @@ sudo cp valley.jpg /usr/share/backgrounds
 cp -r .config ~/
 
 
-# Deinstalliere X-Term
+#Full-Upgrade Backports
+sudo apt full-upgrade -t trixie-backports -y
+
+
+# Deinstalliere X-Term & Cleanup
 sudo apt purge -y xterm
 sudo apt autopurge -y
+sudo apt autoclean
+sudo apt clean
 
 
 echo "Die Installation ist abgeschlossen. Bitte starte deinen Rechner neu, damit die Änderungen wirksam werden."
