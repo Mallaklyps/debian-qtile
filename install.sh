@@ -7,9 +7,23 @@ sudo apt modernize-sources -y
 # Füge i386 Architektur hinzu
 sudo dpkg --add-architecture i386
 
+# Füge Backports hinzu
+echo "Types: deb deb-src
+URIs: http://deb.debian.org/debian
+Suites: trixie-backports
+Components: main contrib non-free non-free-firmware
+Enabled: yes
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" sudo tee > /etc/apt/sources.list.d/debian-backports.sources
 
-# Aktualisiere die Paketlisten
-sudo apt update && sudo apt full-upgrade -y
+
+# Aktualisiere die Paketlisten und installiere Updates
+sudo apt update
+
+sudo apt install -y linux-headers-amd64
+
+sudo apt full-upgrade -y -t trixie-backports
+
+echo "ntsync" | sudo tee > /etc/modules-load.d/ntsync.conf
 
 
 # Verhindere die Installation von ungewollten Paketen
@@ -43,7 +57,7 @@ sudo apt install -y cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv flamesho
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/cuda-keyring_1.1-1_all.deb
 sudo apt install -y ./cuda-keyring_1.1-1_all.deb
-sudo apt update && sudo apt install -y linux-headers-amd64 nvidia-driver-pinning-590 firmware-misc-nonfree
+sudo apt update && sudo apt install -y nvidia-driver-pinning-590 firmware-misc-nonfree
 
 sudo apt -V install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit
 
@@ -57,7 +71,7 @@ sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
 
 
-#Installiere Wine & NTsync
+#Installiere Wine NTsync
 wget -O morgwai-obs.gpg https://build.opensuse.org/projects/home:morgwai/signing_keys/download?kind=gpg
 echo "deb [signed-by=/etc/apt/keyrings/morgwai-obs.gpg] http://download.opensuse.org/repositories/home:/morgwai:/ntsync/Debian_13 /" > wine-ntsync.list
 sudo mv morgwai-obs.gpg /etc/apt/keyrings/
@@ -94,11 +108,6 @@ sudo apt install -y ./nvim-linux-x86_64.deb
 sudo apt install -y ./gamescope_3.16.15-2_amd64.deb
 
 
-# Installiere Pfetch
-sudo cp pfetch /usr/bin
-sudo chmod +x /usr/bin/pfetch
-
-
 # Installiere Bluetui
 sudo cp bluetui /usr/bin
 sudo chmod +x /usr/bin/bluetui
@@ -131,13 +140,13 @@ mkdir ~/.icons
 
 
 # Installiere Grub Theme
-git clone https://github.com/catppuccin/grub.git
-sudo mkdir -p /usr/share/grub/themes
-sudo cp -r ~/debian-qtile/grub/src/catppuccin-frappe-grub-theme /usr/share/grub/themes/catppuccin-frappe-grub-theme
-echo "GRUB_THEME="/usr/share/grub/themes/catppuccin-frappe-grub-theme/theme.txt"" | sudo tee -a /etc/default/grub
-echo "GRUB_GFXMODE=1920x1080" | sudo tee -a /etc/default/grub
-sudo cp logo.png /usr/share/grub/themes/catppuccin-frappe-grub-theme/
-sudo update-grub
+#git clone https://github.com/catppuccin/grub.git
+#sudo mkdir -p /usr/share/grub/themes
+#sudo cp -r ~/debian-qtile/grub/src/catppuccin-frappe-grub-theme /usr/share/grub/themes/catppuccin-frappe-grub-theme
+#echo "GRUB_THEME="/usr/share/grub/themes/catppuccin-frappe-grub-theme/theme.txt"" | sudo tee -a /etc/default/grub
+#echo "GRUB_GFXMODE=1920x1080" | sudo tee -a /etc/default/grub
+#sudo cp logo.png /usr/share/grub/themes/catppuccin-frappe-grub-theme/
+#sudo update-grub
 
 
 # Kopiere bashrc
@@ -156,11 +165,6 @@ cp -r .config ~/
 # Deinstalliere X-Term
 sudo apt purge -y xterm
 sudo apt autopurge -y
-
-
-#Installiere Kernel aus den Backports
-#sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
-#echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
 
 echo "Die Installation ist abgeschlossen. Bitte starte deinen Rechner neu, damit die Änderungen wirksam werden."
