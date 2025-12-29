@@ -13,7 +13,7 @@ URIs: http://deb.debian.org/debian
 Suites: trixie-backports
 Components: main contrib non-free non-free-firmware
 Enabled: yes
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" sudo tee > /etc/apt/sources.list.d/debian-backports.sources
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" sudo tee /etc/apt/sources.list.d/debian-backports.sources
 
 
 # Aktualisiere die Paketlisten und installiere Updates
@@ -23,7 +23,7 @@ sudo apt install -y linux-headers-amd64
 
 sudo apt full-upgrade -y -t trixie-backports
 
-echo "ntsync" | sudo tee > /etc/modules-load.d/ntsync.conf
+echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
 
 # Verhindere die Installation von ungewollten Paketen
