@@ -7,23 +7,9 @@ sudo apt modernize-sources -y
 # Füge i386 Architektur hinzu
 sudo dpkg --add-architecture i386
 
-# Füge Backports hinzu
-echo "Types: deb deb-src
-URIs: http://deb.debian.org/debian
-Suites: trixie-backports
-Components: main contrib non-free non-free-firmware
-Enabled: yes
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/debian-backports.sources
-
 
 # Aktualisiere die Paketlisten und installiere Updates
-sudo apt update
-
-sudo apt install -y linux-headers-amd64
-
-sudo apt full-upgrade -t trixie-backports -y
-
-echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
+sudo apt update && sudo apt full-upgrade -y
 
 
 # Verhindere die Installation von ungewollten Paketen
@@ -31,7 +17,7 @@ sudo apt-mark hold desktop-base vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-ext
 
 
 # Installiere die benötigten Core-Pakete
-sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups firmware-linux
+sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups firmware-linux linux-headers-amd64
 
 
 # Installiere UI-Pakete
@@ -50,7 +36,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y cmatrix figlet bat ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y cmatrix figlet bat htop ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
@@ -59,7 +45,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/cu
 sudo apt install -y ./cuda-keyring_1.1-1_all.deb
 sudo apt update && sudo apt install -y nvidia-driver-pinning-590 firmware-misc-nonfree
 
-sudo apt -V install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit nvidia-driver-libs:i386
+sudo apt install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit nvidia-driver-libs:i386
 
 echo "panic=0 ro quiet loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1" | sudo tee -a /etc/kernel/cmdline
 
@@ -69,16 +55,6 @@ echo "panic=0 ro quiet loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1" | sud
 sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
-
-
-#Installiere Wine NTsync
-wget -O morgwai-obs.gpg https://build.opensuse.org/projects/home:morgwai/signing_keys/download?kind=gpg
-echo "deb [signed-by=/etc/apt/keyrings/morgwai-obs.gpg] http://download.opensuse.org/repositories/home:/morgwai:/ntsync/Debian_13 /" > wine-ntsync.list
-sudo mv morgwai-obs.gpg /etc/apt/keyrings/
-sudo mv wine-ntsync.list /etc/apt/sources.list.d/
-sudo apt update
-
-sudo apt install -y winehq-devel
 
 
 # Installiere Gaming Pakete
@@ -162,8 +138,19 @@ sudo cp valley.jpg /usr/share/backgrounds
 cp -r .config ~/
 
 
+# Füge Backports hinzu
+echo "Types: deb
+URIs: http://deb.debian.org/debian
+Suites: trixie-backports
+Components: main contrib non-free non-free-firmware
+Enabled: yes
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/debian-backports.sources
+
+
 #Full-Upgrade Backports
-sudo apt full-upgrade -t trixie-backports -y
+sudo apt update && sudo apt full-upgrade -t trixie-backports -y
+
+echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
 
 # Deinstalliere X-Term & Cleanup
