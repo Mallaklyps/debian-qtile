@@ -147,14 +147,15 @@ Enabled: yes
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/debian-backports.sources
 
 
-#Full-Upgrade Backports
-sudo apt update && sudo apt full-upgrade -t trixie-backports -y
+#Installiere Kernel aus den Backports & aktiviere NTsync
+sudo apt update && sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
 
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
 
 # Deinstalliere X-Term & Cleanup
 sudo apt purge -y xterm
+sudo apt modernize-sources -y
 sudo apt autopurge -y
 sudo apt autoclean
 sudo apt clean
