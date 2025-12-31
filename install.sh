@@ -148,7 +148,7 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/s
 
 
 #Installiere Kernel aus den Backports & aktiviere NTsync
-sudo apt update && sudo apt install -t trixie-backports linux-image-amd64 linux-headers-amd64
+sudo apt update && sudo apt install -y -t trixie-backports linux-image-amd64 linux-headers-amd64
 
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
