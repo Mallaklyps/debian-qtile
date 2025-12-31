@@ -49,7 +49,7 @@ sudo apt install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvo
 
 echo "panic=0 ro quiet loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1" | sudo tee -a /etc/kernel/cmdline
 
-#echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
+#echo 'GRUB_CMDLINE_LINUX="$GRUB_CMDLINE_LINUX loglevel=2 nvidia-drm.modeset=1 nvidia-drm.fbdev=1"' | sudo tee /etc/default/grub.d/nvidia-modeset.cfg
 #sudo update-grub
 
 sudo systemctl enable nvidia-suspend.service
