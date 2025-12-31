@@ -43,7 +43,7 @@ sudo apt install -y cmatrix figlet bat htop ripgrep zoxide entr pipes-sh mpv fla
 
 wget https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/cuda-keyring_1.1-1_all.deb
 sudo apt install -y ./cuda-keyring_1.1-1_all.deb
-sudo apt update && sudo apt install -y nvidia-driver-pinning-590 firmware-misc-nonfree
+sudo apt update && sudo apt install -y nvidia-driver-pinning-590
 
 sudo apt install -y nvidia-driver nvidia-kernel-open-dkms nvidia-settings libnvoptix1 cuda-toolkit nvidia-driver-libs:i386
 
