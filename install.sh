@@ -57,6 +57,13 @@ sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
 
 
+#Installiere und aktiviere zram
+sudo apt install -y systemd-zram-generator
+
+sudo systemctl daemon-reload
+sudo systemctl start systemd-zram-setup@zram0.service
+
+
 # Installiere Gaming Pakete
 sudo apt install -y steam scummvm lutris gamemode
 
@@ -148,7 +155,7 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg" | sudo tee /etc/apt/s
 
 
 #Installiere Kernel aus den Backports & aktiviere NTsync
-sudo apt update && sudo apt install -y -t trixie-backports linux-image-amd64 linux-headers-amd64
+sudo apt update && sudo apt install -y -t trixie-backports linux-image-amd64 linux-headers-amd64 firmware-linux
 
 echo "ntsync" | sudo tee /etc/modules-load.d/ntsync.conf
 
