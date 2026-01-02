@@ -63,6 +63,10 @@ sudo apt install -y systemd-zram-generator
 sudo systemctl daemon-reload
 sudo systemctl start systemd-zram-setup@zram0.service
 
+echo "[zram0]
+zram-size = ram / 2" | sudo tee /etc/systemd/zram-generator.conf
+
+
 
 # Installiere Gaming Pakete
 sudo apt install -y steam scummvm lutris gamemode
