@@ -13,7 +13,7 @@ sudo apt update && sudo apt full-upgrade -y
 
 
 # Verhindere die Installation von ungewollten Paketen
-sudo apt-mark hold desktop-base vlc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
+sudo apt-mark hold desktop-base vlc evince fonts-noto fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted qsynth
 
 
 # Installiere die benötigten Core-Pakete
@@ -36,7 +36,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y cmatrix figlet bat htop ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y cmatrix figlet bat calcurse sc-im htop ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
