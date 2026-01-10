@@ -25,7 +25,7 @@ sudo apt install -y rofi dunst nwg-look feh gtk3-nocsd papirus-icon-theme qt6-st
 
 
 # Installiere File Manager
-sudo apt install -y thunar thunar-archive-plugin gvfs-backends ranger trash-cli fzf smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar
+sudo apt install -y thunar thunar-archive-plugin gvfs-backends mc ranger trash-cli fzf smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar
 
 xdg-user-dirs-update
 sudo mkdir /usr/share/desktop-directories
@@ -36,7 +36,7 @@ sudo apt install -y pipewire-audio pulsemixer audacity mpd ncmpcpp cava
 
 
 # Installiere Utilities und Programme
-sudo apt install -y cmatrix figlet bat calcurse sc-im htop ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
+sudo apt install -y cmatrix figlet bat neomutt calcurse sc-im htop ripgrep zoxide entr pipes-sh mpv flameshot snapper-gui i3lock-fancy gufw calibre obs-studio gimp xdg-desktop-portal-gtk virt-manager libreoffice libreoffice-l10n-de libreoffice-gtk3 hunspell-de-de mythes-de hyphen-de zathura fonts-recommended ttf-mscorefonts-installer starship keepassxc-full
 
 
 # Installiere Nvidia-Driver
