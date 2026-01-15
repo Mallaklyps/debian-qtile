@@ -17,7 +17,7 @@ sudo apt-mark hold desktop-base vlc evince vim-gui-common fonts-noto fonts-noto-
 
 
 # Installiere die benötigten Core-Pakete
-sudo apt install -y qtile lightdm slick-greeter alacritty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups firmware-linux linux-headers-amd64
+sudo apt install -y qtile lightdm slick-greeter kitty network-manager lxpolkit avahi-daemon fwupd acpid acpi curl bluez cups firmware-linux linux-headers-amd64
 
 
 # Installiere UI-Pakete
