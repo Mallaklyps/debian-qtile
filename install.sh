@@ -150,7 +150,7 @@ sudo cp valley.jpg /usr/share/backgrounds
 
 # Kopiere .config
 cp -r .config ~/
-chmod + x ~/.config/ranger/scope.sh
+chmod +x ~/.config/ranger/scope.sh
 
 
 # Füge Backports hinzu
