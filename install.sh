@@ -153,6 +153,10 @@ cp -r .config ~/
 chmod +x ~/.config/ranger/scope.sh
 
 
+#Aktiviere Firewall
+sudo ufw enable
+
+
 # Füge Backports hinzu
 echo "Types: deb
 URIs: http://deb.debian.org/debian
