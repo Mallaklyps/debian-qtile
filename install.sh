@@ -155,6 +155,8 @@ chmod +x ~/.config/ranger/scope.sh
 
 #Aktiviere Firewall
 sudo ufw enable
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
 
 
 # Füge Backports hinzu
