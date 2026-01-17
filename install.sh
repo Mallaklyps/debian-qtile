@@ -28,7 +28,7 @@ sudo apt install -y rofi dunst nwg-look feh gtk3-nocsd papirus-icon-theme qt6-st
 
 
 # Installiere File Manager
-sudo apt install -y ranger udisks2 trash-cli fzf smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar
+sudo apt install -y ranger udisks2 trash-cli fzf smbclient cifs-utils xdg-user-dirs-gtk eza ueberzug atool rar unrar xfburn
 
 xdg-user-dirs-update
 sudo mkdir /usr/share/desktop-directories
