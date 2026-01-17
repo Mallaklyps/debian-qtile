@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Beende das Skript, sobald ein Fehler auftritt
+set -e
+
 # Modernize-sources
 sudo apt modernize-sources -y
 
