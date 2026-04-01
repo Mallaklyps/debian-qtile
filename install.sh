@@ -87,7 +87,7 @@ sudo apt update && sudo apt install -y brave-browser
 
 
 # Installiere Mixxx
-sudo apt install -y ./mixxx-2.5.4-16-g4c6d76ea2a.deb
+sudo apt install -y ./mixxx-2.5.6-10-g2f9bf8ebad-x86_64.deb
 
 
 # Installiere Neovim
